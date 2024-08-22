@@ -1,37 +1,27 @@
-// In SignUp.js or wherever your sign-up form is
 import React, { useState } from 'react';
+import { Text, TextInput, View, Button } from 'react-native';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-
-    const response = await fetch('/.netlify/functions/sendVerificationSMS', {
-      method: 'POST',
-      body: JSON.stringify({ phoneNumber }),
-    });
-
-    if (response.ok) {
-      setMessage(`Verification code was sent to ${phoneNumber}`);
-    } else {
-      setMessage('Failed to send verification code.');
-    }
+  const handleSignUp = () => {
+    // Here you would normally handle the sign-up process.
+    // After successful sign-up, navigate to sign-in.
+    navigate('/signin');
   };
 
   return (
-    <form onSubmit={handleSignUp}>
-      <input
-        type="tel"
-        placeholder="Enter your phone number"
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-        required
-      />
-      <button type="submit">Sign Up</button>
-      {message && <p>{message}</p>}
-    </form>
+    <View style={{ padding: 20 }}>
+      <Text>Sign Up</Text>
+      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
+      <TextInput placeholder="Phone Number" value={phoneNumber} onChangeText={setPhoneNumber} />
+      <TextInput placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
+      <Button title="Sign Up" onPress={handleSignUp} />
+    </View>
   );
 };
 
