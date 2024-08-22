@@ -1,5 +1,5 @@
 {
-    "name": "JobFinderApp",
+    "name": "JR Jobb",
     "version": "1.0.0",
     "scripts": {
         "start": "react-native start",
