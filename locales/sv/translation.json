@@ -1,0 +1,8 @@
+{
+    "welcome": "Välkommen till JobFinderApp",
+    "description": "Hitta lokala jobb och tjäna pengar",
+    "button": {
+      "apply": "Ansök nu",
+      "post": "Lägg upp ett jobb"
+    }
+  }  

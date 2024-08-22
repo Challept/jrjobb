@@ -1,0 +1,8 @@
+{
+    "welcome": "Welcome to JobFinderApp",
+    "description": "Find local jobs and earn money",
+    "button": {
+      "apply": "Apply Now",
+      "post": "Post a Job"
+    }
+  }  
