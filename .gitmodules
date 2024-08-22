@@ -1,0 +1,3 @@
+[submodule "jrjobb"]
+    path = jrjobb
+    url = https://github.com/Challept/jrjobb/tree/master.git
